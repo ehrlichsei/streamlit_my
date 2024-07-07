@@ -1,20 +1,23 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
 
-# 标题和文本
-st.title('我的第一个 Streamlit 应用')
-st.write("这是一个简单的示例应用")
+from my_text.my_text import run_text
 
-# 创建数据框
-df = pd.DataFrame(
-    np.random.randn(10, 5),
-    columns=('col %d' % i for i in range(5))
-)
+from my_column.my_table_visualizer import run_table_visualizer
+from my_column.my_image_column import run_image_column
+from my_column.my_datetime_column import run_datetime_column
 
-# 显示数据框
-st.write(df)
+from my_chart.my_map import run_map
 
-# 添加交互组件
-if st.button('显示图表'):
-    st.line_chart(df)
+# from my_input.my_form import run_form
+from my_input.my_button import run_button
+
+if __name__ == '__main__':
+    run_text()
+
+    run_datetime_column()
+    run_image_column()
+    run_table_visualizer()
+
+    run_map()
+
+    run_button()
